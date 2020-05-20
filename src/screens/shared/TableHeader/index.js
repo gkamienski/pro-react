@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TableHeader({ columnsNames, sort }) {
   return (
@@ -15,3 +16,7 @@ function TableHeader({ columnsNames, sort }) {
 }
 
 export default TableHeader;
+TableHeader.protoTypes = {
+  columnsNames: protoTypes.arrayOf(String).isRequired,
+  sort: PropTypes.func.isRequired,
+};

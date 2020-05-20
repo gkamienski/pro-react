@@ -67,6 +67,7 @@ export default function Table({
 Table.propTypes = {
   users: PropTypes.arrayOf(PropTypes.object).isRequired,
   setSelectedUser: PropTypes.func.isRequired,
+  handleSort: PropTypes.func.isRequired,
   selectedUser: PropTypes.shape({
     idUser: PropTypes.number,
     firstName: PropTypes.string,
