@@ -13,6 +13,7 @@ const Main = () => {
 
   const [users, setUsers] = useState(usersInitial);
   const [selectedUser, setSelectedUser] = useState({});
+  const [deleteError, setDeleteError] = useState("");
 
   const addUser = (e) => {
     setUsers([
@@ -26,6 +27,10 @@ const Main = () => {
   };
 
   const deleteUser = (e) => {
+    if (e) {
+      setDeleteError("Trzeba zaznaczyć obiekt do usunięcia");
+      setTimeout(() => setDeleteError(""), 3000);
+    }
     let tmp = users.filter((obj) => {
       return obj !== e;
     });
@@ -62,6 +67,7 @@ const Main = () => {
             >
               Usuń użytkownika
             </button>
+            {deleteError && <span>{deleteError}</span>}
           </div>
         </div>
 

@@ -17,6 +17,6 @@ function TableHeader({ columnsNames, sort }) {
 
 export default TableHeader;
 TableHeader.protoTypes = {
-  columnsNames: protoTypes.arrayOf(String).isRequired,
+  columnsNames: PropTypes.arrayOf(String).isRequired,
   sort: PropTypes.func.isRequired,
 };
